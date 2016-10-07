@@ -12,9 +12,9 @@ Now:
 
 ```ruby
 browser = Watir::Browser.new(
-				:remote,
-				:url => "http://#{username}:#{authkey}@hub.crossbrowsertesting.com:80/wd/hub",
-				:desired_capabilities => caps) 
+    :remote,
+	:url => "http://#{username}:#{authkey}@hub.crossbrowsertesting.com:80/wd/hub",
+	:desired_capabilities => caps) 
 ```
 
 Username here is the email address associated with your account, and authkey is the authorization key that can be found on the 'Manage Account' section of our site. Caps is the capabilities object that contains our api names for selecting OS/Browser and other options. Your capabilities should look something like this:
