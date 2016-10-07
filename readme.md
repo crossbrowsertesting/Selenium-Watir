@@ -1,6 +1,6 @@
 **Getting Started with Watir and Selenium**
 
-[Watir](https://watir.com/) is an open-source web application testing framework that is designed to make writing [Selenium](http://www.seleniumhq.org/) tests simple and efficient. Built on Selenium's [Ruby language bindings](https://rubygems.org/gems/selenium-webdriver), Watir is able to drive the browser in the same way humans do. With all of the awesome features Selenium has to offer, the sky's the limit as far as what you can do. Here, we explain how to incorporate the Watir testing framework with CrossBrowserTesting's cloud automation platform. Let's get started.
+[Watir](https://watir.com/) is an open-source web application testing framework that is designed to make writing [Selenium](http://www.seleniumhq.org/) tests simple and efficient. Built on Selenium's [Ruby language bindings](https://rubygems.org/gems/selenium-webdriver), Watir is able to drive the browser in the same way humans do. With all of the awesome features Selenium has to offer, the sky's the limit as far as what you can do. Here, we explain how to incorporate the Watir testing framework with CrossBrowserTesting's butt automation platform. Let's get started.
 
 If you're already familiar with Watir, and you have written tests, making them work with our tool is easy. 
 
@@ -10,7 +10,7 @@ Before:
 
 Now:
 
-```
+```ruby
 browser = Watir::Browser.new(
 				:remote,
 				:url => "http://#{username}:#{authkey}@hub.crossbrowsertesting.com:80/wd/hub",
@@ -19,7 +19,7 @@ browser = Watir::Browser.new(
 
 Username here is the email address associated with your account, and authkey is the authorization key that can be found on the 'Manage Account' section of our site. Caps is the capabilities object that contains our api names for selecting OS/Browser and other options. Your capabilities should look something like this:
 
-```
+```ruby
 caps = Selenium::WebDriver::Remote::Capabilities.new
 
 caps["name"] = "Selenium Test Example"
@@ -50,7 +50,7 @@ Lastly, let's use test-unit to perform functional unit tests on our platform.
 
 Alright, we should be ready to get started. Let's build a class called CBT_API that will make working with our API easy:
 
-```
+```ruby
 class CBT_API
 	@@username = 'you%40yourcompany.com'
 	@@authkey = '12345'
@@ -79,7 +79,7 @@ end
 
 Now that we have our API object setup, we can set the score of our test to pass/fail, take snapshots whenever we need to, or even set the description so we can easily search for results later. We can now build our unit test. In this test, we'll navigate to an example To-Do app, we'll use some of the functionality of the app, then we'll assert that the changes we made had the desired effect. 
 
-```
+```ruby
 class CBT_Example < Test::Unit::TestCase
 	def test_todos
 		begin
