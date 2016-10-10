@@ -1,6 +1,6 @@
 **Getting Started with Watir and Selenium**
 
-[Watir](https://watir.com/) is an open-source web application testing framework that is designed to make writing [Selenium](http://www.seleniumhq.org/) tests simple and efficient. Built on Selenium's [Ruby language bindings](https://rubygems.org/gems/selenium-webdriver), Watir is able to drive the browser in the same way humans do. With all of the awesome features Selenium has to offer, the sky's the limit as far as what you can do. Here, we explain how to incorporate the Watir testing framework with CrossBrowserTesting's butt automation platform. Let's get started.
+[Watir](https://watir.com/) is an open-source web application testing framework that is designed to make writing [Selenium](http://www.seleniumhq.org/) tests simple and efficient. Built on Selenium's [Ruby language bindings](https://rubygems.org/gems/selenium-webdriver), Watir is able to drive the browser in the same way humans do. With all of the awesome features Selenium has to offer, the sky's the limit as far as what you can do. Here, we explain how to incorporate the Watir testing framework with CrossBrowserTesting's cloud automation platform. Let's get started.
 
 If you're already familiar with Watir, and you have written tests, making them work with our tool is easy. 
 
