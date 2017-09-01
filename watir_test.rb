@@ -39,8 +39,8 @@ class CBT_Example < Test::Unit::TestCase
 
 			caps["name"] = "Selenium Test Example"
 			caps["build"] = "1.0"
-			caps["browser_api_name"] = "IE10"
-			caps["os_api_name"] = "Win7x64-C2"
+			caps["browserName"] = "Firefox" 	# Pulls latest version by default
+			caps["platform"] = "Windows 7"		# To specify a version, add caps["version"] = "desired version"
 			caps["screen_resolution"] = "1024x768"
 			caps["record_video"] = "true"
 			caps["record_network"] = "true"
