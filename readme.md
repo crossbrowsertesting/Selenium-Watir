@@ -2,7 +2,7 @@
 
 [Watir](https://watir.com/) is an open-source web application testing framework that is designed to make writing [Selenium](http://www.seleniumhq.org/) tests simple and efficient. Built on Selenium's [Ruby language bindings](https://rubygems.org/gems/selenium-webdriver), Watir is able to drive the browser in the same way humans do. With all of the awesome features Selenium has to offer, the sky's the limit as far as what you can do. Here, we explain how to incorporate the Watir testing framework with CrossBrowserTesting's cloud automation platform. Let's get started.
 
-If you're already familiar with Watir, and you have written tests, making them work with our tool is easy. 
+If you're already familiar with Watir, and you have written tests, making them work with our tool is easy.
 
 Before:
 
@@ -14,7 +14,7 @@ Now:
 browser = Watir::Browser.new(
     :remote,
 	:url => "http://#{username}:#{authkey}@hub.crossbrowsertesting.com:80/wd/hub",
-	:desired_capabilities => caps) 
+	:desired_capabilities => caps)
 ```
 
 Username here is the email address associated with your account, and authkey is the authorization key that can be found on the 'Manage Account' section of our site. Caps is the capabilities object that contains our api names for selecting OS/Browser and other options. Your capabilities should look something like this:
@@ -28,10 +28,10 @@ caps["browserName"] = "Firefox" 	# Pulls latest version by default
 caps["platform"] = "Windows 7"		# To specify a version, add caps["version"] = "desired version"
 caps["screen_resolution"] = "1024x768"
 caps["record_video"] = "true"
-caps["record_network"] = "true"					
+caps["record_network"] = "false"					
 ````
 
-A complete list of capabilities options can be found here: 
+A complete list of capabilities options can be found here:
 
 If you're new to Watir, and you'd like to start from scratch, you've come to the right place. First, we'll need a couple of necessary Selenium libraries. Getting them is easy with Gem.
 
@@ -42,7 +42,7 @@ We'll also be using [Rest](https://github.com/rest-client/rest-client) to make R
 
 `gem install rest-client`
 
-Lastly, let's use test-unit to perform functional unit tests on our platform. 
+Lastly, let's use test-unit to perform functional unit tests on our platform.
 
 `gem install test-unit`
 
@@ -77,7 +77,7 @@ class CBT_API
 end
 ```
 
-Now that we have our API object setup, we can set the score of our test to pass/fail, take snapshots whenever we need to, or even set the description so we can easily search for results later. We can now build our unit test. In this test, we'll navigate to an example To-Do app, we'll use some of the functionality of the app, then we'll assert that the changes we made had the desired effect. 
+Now that we have our API object setup, we can set the score of our test to pass/fail, take snapshots whenever we need to, or even set the description so we can easily search for results later. We can now build our unit test. In this test, we'll navigate to an example To-Do app, we'll use some of the functionality of the app, then we'll assert that the changes we made had the desired effect.
 
 ```ruby
 class CBT_Example < Test::Unit::TestCase
@@ -85,7 +85,7 @@ class CBT_Example < Test::Unit::TestCase
 		begin
 			username = 'you%40yourcompany.com'
 			authkey = '12345'
-			
+
 			caps = Selenium::WebDriver::Remote::Capabilities.new
 
 			caps["name"] = "Selenium Test Example"
@@ -99,7 +99,7 @@ class CBT_Example < Test::Unit::TestCase
 			browser = Watir::Browser.new(
 				:remote,
 				:url => "http://#{username}:#{authkey}@hub.crossbrowsertesting.com:80/wd/hub",
-				:desired_capabilities => caps) 
+				:desired_capabilities => caps)
 
 			session_id = browser.driver.session_id
 
@@ -152,4 +152,4 @@ class CBT_Example < Test::Unit::TestCase
 end
 ```
 
-As you can see from our test, we interact with the app, and then we assert that those changes were made. Rather than having to test this manually against each configuration, we can now easily run our test against any configuration and simply focus on the tests that failed. Thanks to Watir's webdriver writing and extending these tests are easy and efficient. If you have any trouble, feel free to [get in touch with us](<mailto:info@crossbrowsertesting.com>)! We're always happy to help. 
+As you can see from our test, we interact with the app, and then we assert that those changes were made. Rather than having to test this manually against each configuration, we can now easily run our test against any configuration and simply focus on the tests that failed. Thanks to Watir's webdriver writing and extending these tests are easy and efficient. If you have any trouble, feel free to [get in touch with us](<mailto:info@crossbrowsertesting.com>)! We're always happy to help.
