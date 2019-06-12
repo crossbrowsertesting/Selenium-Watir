@@ -34,7 +34,7 @@ class CBT_Example < Test::Unit::TestCase
 		begin
 			username = 'you%40yourcompany.com'
 			authkey = '12345'
-			
+
 			caps = Selenium::WebDriver::Remote::Capabilities.new
 
 			caps["name"] = "Selenium Test Example"
@@ -43,12 +43,12 @@ class CBT_Example < Test::Unit::TestCase
 			caps["platform"] = "Windows 7"		# To specify a version, add caps["version"] = "desired version"
 			caps["screen_resolution"] = "1024x768"
 			caps["record_video"] = "true"
-			caps["record_network"] = "true"
+			caps["record_network"] = "false"
 
 			browser = Watir::Browser.new(
 				:remote,
 				:url => "http://#{username}:#{authkey}@hub.crossbrowsertesting.com:80/wd/hub",
-				:desired_capabilities => caps) 
+				:desired_capabilities => caps)
 
 			session_id = browser.driver.session_id
 
@@ -93,7 +93,7 @@ class CBT_Example < Test::Unit::TestCase
 		rescue Exception => ex
 		    puts ("#{ex.class}: #{ex.message}")
 		    cbt_api.setScore(session_id, "fail")
-		ensure     
+		ensure
 		    # driver.quit
 		    browser.close
 		end
